@@ -1,0 +1,523 @@
+body{
+  background: #aa4b6b;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height:500vh;
+    margin: 0;
+    transition: 0.5s ease-in-out;
+}
+
+body.dark-mode {
+ background: #232526;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: white;
+
+}
+
+::placeholder{
+    color: #0f0609;
+    font-family: "Give You Glory", cursive;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.btn-dark {
+  background-image:linear-gradient(to right, #000000 0%, #53346D  51%, #000000  100%);
+  box-shadow: 0 0 20px #eeeeee2c;
+}
+
+.btn-dark:hover {
+  background-position: right center;
+}
+
+
+.App {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    border: 1px solid transparent;
+}
+
+.sideBar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 120px;
+  padding: 20px;
+  background: rgba(0,0,0,0.15);
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: white;
+  transition: width 0.35s ease, padding 0.35s ease;
+  overflow: hidden;
+  z-index: 33;
+}
+
+.sidebar button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.sidebar input.search {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  outline: none;
+}
+
+.sideBar.closed {
+  width: 0px;
+  padding: 0px;
+}
+
+.toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 164px;
+  transform: translateX(-50%);
+  padding: 6px 8px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+
+  background: #ffffff30;
+  backdrop-filter: blur(6px);
+  border-radius: 6px;
+  z-index: 34;
+
+  transition: left 0.35s ease;
+}
+
+.sideBar.closed + .toggle-btn {
+  left: 6px;
+}
+
+.sideBar.closed ~ .content {
+  margin-left: 60px;
+}
+
+
+
+/* Wrapper clickable */
+.toggle-wrapper {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* The switch background */
+.toggle {
+  width: 60px;
+  height: 28px;
+  background: #ccc;
+  border-radius: 40px;
+  position: relative;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+}
+
+/* Circle that moves */
+.toggle::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 3px;
+  transition: 0.3s;
+}
+
+/* Icon inside the switch */
+.toggle .icon {
+  position: absolute;
+  right: 6px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* Dark mode active */
+.toggle.dark {
+  background: #000;
+}
+
+.toggle.dark::before {
+  left: 35px; /* moves the circle to the right */
+}
+
+.toggle.dark .icon {
+  right: 38px;
+  color: gold;
+}
+
+   
+
+h2{
+    font-family: 'Give You Glory', cursive;
+    color: white;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid white;
+    font-size: 16px;
+    margin-right: 10px auto;
+    background: transparent;
+    outline: none;
+}
+
+:placeholder-shown {
+    color: white;
+    font-family: "Give You Glory", cursive;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    
+    background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 10px #eeeeee49;
+    border-radius: 10px;
+    display: block;
+    font-weight: bold;
+    margin: 15px;
+    cursor: pointer
+}
+
+button:hover {
+background-position: right center; /* change the direction of the change here */
+color: #fff;
+text-decoration: none;
+}
+        
+.priority{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid white;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+}
+
+.warrep{
+  margin-bottom: -2px;
+  color: var(--text-color); 
+}
+
+.level{
+    background: rgba(235, 220, 220, 0.103);
+    color: black;
+    font-weight: bold;
+}
+
+.sort{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: row;
+
+}
+
+.tasks{
+  margin-bottom: 15px;
+  border-left: '2px solid ${getdeadlineColor(deadline)}';
+}
+
+ul li{
+    list-style-type: none;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 10px auto;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    max-width: 400px;
+    overflow-wrap: break-word;
+    cursor: pointer;
+}
+
+
+
+.done{
+    opacity: 0.6;
+     background: rgba(41, 211, 41, 0.855);
+}
+
+.circle {
+  width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    top: 12px;
+    transition: 0.2s;
+    margin-left: 5px;
+}
+
+/* لون الدايرة لما تبقى checked */
+.circle.checked {
+  border-color: #00ff00;
+}
+
+/* علامة الصح */
+.checkmark {
+  color: #00ff00;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.task-text {
+    display: inline-block;
+    margin-left: 15px;
+   position: relative;
+   top: -17px;
+    max-width: 330px;
+}
+
+.delete-button {
+position: relative;
+    cursor: pointer;
+    top: -173px;
+    left: 179px;
+    color: red;
+    font-weight: bold;
+    font-family: "give you glory", cursive;
+    font-size: 26px;
+}
+
+
+input[type="datetime-local"]{color: white;}
+
+.dates{
+    font-size: 12px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content:start;
+    padding-left: 10px;
+}
+
+.end{
+    margin-left: 10px;
+}
+
+.time{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid white;
+    border-radius: 12px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.toTop{
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-image: linear-gradient(to right, #000000 0%, #53346D  51%, #000000  100%);
+}
+
+.counter{
+    color: white;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    width: fit-content;
+
+}
+
+.alert{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      z-index: 999;
+}
+
+
+@media (max-width: 768px) {
+
+
+
+.toTop {
+    bottom: 20px;
+    right: 11px;
+    padding: 8px 12px;
+    font-size: 16px;
+    width: 37px;
+
+  }
+
+  .App {
+    max-width: 95%;
+  }
+
+  .sideBar {
+    width: 122px;
+    padding: 12px;
+  }
+
+  .sideBar.closed + .toggle-btn {
+    left: 2px;
+    width: auto;
+  }
+
+  .toggle-btn {
+    left: 120px;
+    width: auto;
+
+  }
+
+  input, select, button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  ul li {
+    max-width: 90%;
+    font-size: 16px;
+  }
+
+  .delete-button {
+    left: 176px;
+    top: -160px;
+  }
+
+  .task-text {
+    max-width: 70%;
+    top: -10px;
+  }
+
+  .circle {
+    top: 5px;
+  }
+
+  .sort {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+.toTop {
+    bottom: 15px;
+    right: 5px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .sideBar {
+    width: 122px;
+    padding: 10px;
+  }
+
+  .toggle-btn {
+    left: 7px !important;
+    padding: 4px 6px;
+  }
+
+  .toggle {
+    width: 50px;
+    height: 24px;
+  }
+
+  .toggle::before {
+    width: 18px;
+    height: 18px;
+  }
+
+  .toggle.dark::before {
+    left: 28px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 12px 25px;
+  }
+
+  ul li {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .delete-button {
+    left: 100px;
+    font-size: 22px;
+    top : -187px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+.toTop {
+    bottom: 100px;
+    right: 50px;
+    padding: 12px 18px;
+    font-size: 22px;
+  }
+
+  .App {
+    max-width: 800px;
+  }
+
+  ul li {
+    max-width: 500px;
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 18px;
+  }
+
+  .toggle {
+    width: 70px;
+    height: 32px;
+  }
+}
