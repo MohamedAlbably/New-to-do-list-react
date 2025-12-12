@@ -269,6 +269,7 @@ useEffect(() => {
       const now = new Date();
       const diffMs = deadlineDate - now;
 
+      
       if (diffMs <= 0) {
         opportunity = "time is up";
       } else {
